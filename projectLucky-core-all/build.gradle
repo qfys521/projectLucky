@@ -1,0 +1,36 @@
+buildscript {
+    dependencies {
+        classpath(files("shadowjar/shadow-8.1.1-all.jar"))
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'java-library'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+repositories {
+    mavenCentral()
+    google()
+    mavenLocal()
+    maven {
+        url 'https://repo.codethink.cn/public'
+    }
+
+}
+
+dependencies {
+    api project(':projectLucky-api')
+    api project(':projectLucky-core')
+}
+shadowJar{
+    manifest {
+        attributes(
+                'Main-Class': 'cn.qfys521.xiaoming.plugin.projectLucky.LikeLucky'
+        )
+    }
+
+    // 将 build.gradle 打入到 jar 中, 方便查看依赖包版本
+    from("./"){
+        include 'build.gradle'
+    }
+}

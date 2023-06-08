@@ -1,0 +1,4 @@
+include 'projectLucky-core'
+include 'projectLucky-api'
+include 'projectLucky-core-all'
+

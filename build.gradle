@@ -1,0 +1,15 @@
+repositories {
+    mavenCentral()
+    google()
+    mavenLocal()
+    maven {
+        url 'https://repo.codethink.cn/public'
+    }
+
+}
+
+
+allprojects {
+    group 'cn.qfys521.xiaoming.plugin.projectLucky'
+    version '1.1.0-SNAPSHOT'
+}
