@@ -32,4 +32,4 @@ jobs:
       
       
     - name: Build with Gradle
-      run: cd ./projectLucky-core-all || gradle shadowJar
+      run: ./gradlew shadowJar
