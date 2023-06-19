@@ -45,6 +45,8 @@ public class LuckInteractor extends SimpleInteractors<LikeLucky> {
             user.sendError("您没有那么多Coin！请签到获得吧！");
         } else if (count >= Integer.MAX_VALUE) {
             user.sendError("数量太多辣");
+        } else if (count <= Integer.MIN_VALUE) {
+            user.sendError("这个数字太奇怪辣");
         } else if (count < 0) {
             long c = new Random().nextInt(6) != 1 ? new Random().nextInt(50) : new Random().nextInt(500) * -1;
             if (plugin.datas.getLuckyCount(user.getCode()) < 0) {

@@ -1,2 +1,5 @@
 /libs/xiaoming-host-terminal-snapshot-4.9.1.jar
 /build
+/.gradle
+/.idea
+/.git
