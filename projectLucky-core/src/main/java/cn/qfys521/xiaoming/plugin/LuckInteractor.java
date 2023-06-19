@@ -56,7 +56,7 @@ public class LuckInteractor extends SimpleInteractors<LikeLucky> {
         } else if (count > 0) {
             plugin.datas.addLuckyCount(user.getCode(), count * -1);
             long ll = count;
-            long c = new Random().nextInt(((int) ll) * 2);
+            long c = new Random().nextInt(((int) (ll * 2)));
             plugin.datas.addLuckyCount(user.getCode(), c);
             plugin.datas.saveOrFail();
             user.sendMessage(
