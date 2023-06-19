@@ -37,16 +37,16 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: api
-        path: ./projectLucky-api/build/*.jar
+        path: ./projectLucky-api/build/libs/*.jar
     
     - uses: actions/upload-artifact@v3
       with:
         name: core
-        path: ./projectLucky-core/build/*.jar
+        path: ./projectLucky-core/build/libs/*.jar
     
     - uses: actions/upload-artifact@v3
       with:
         name: all
-        path: ./projectLucky-core-all/build/*.jar
+        path: ./projectLucky-core-all/build/libs/*.jar
     
     
