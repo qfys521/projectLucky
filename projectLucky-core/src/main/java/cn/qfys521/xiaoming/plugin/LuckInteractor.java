@@ -31,6 +31,8 @@ public class LuckInteractor extends SimpleInteractors<LikeLucky> {
             plugin.datas.saveOrFail();
             user.sendMessage("现在是" + nowtime+
                     "\n您获得了" + lccount + "点Coin。\n"+"您当前拥有" + myC + "点Coin。");
+            plugin.datas.setLastDate(user.getCode());
+            plugin.datas.saveOrFail();
         }
 
 
