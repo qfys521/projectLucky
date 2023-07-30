@@ -24,19 +24,13 @@ public class LuckInteractor extends SimpleInteractors<LikeLucky> {
         String nowtime = sdf.format(date);
 
         if(nowtime.equals(plugin.datas.getLastDate(user.getCode()))){
-            ForwardMessageBuilder forwardMessageBuilder = new ForwardMessageBuilder();
-            forwardMessageBuilder.add(xiaoMingBot.getCode(),(int) (new Date().getTime() / 1000),xiaoMingBot.getMiraiBot().getNick(),"ヾ(≧へ≦)〃,您今天已经过签到啦");
-            user.getContact().sendMessage(forwardMessageBuilder.build());
+            user.sendMessage("ヾ(≧へ≦)〃,您今天已经过签到啦");
         }else {
             plugin.datas.addLuckyCount(user.getCode(), lccount);
             long myC = plugin.datas.getLuckyCount(user.getCode());
             plugin.datas.saveOrFail();
-            ForwardMessageBuilder forwardMessageBuilder = new ForwardMessageBuilder();
-            forwardMessageBuilder
-                    .add(xiaoMingBot.getCode(),(int)(new Date().getTime() / 1000),xiaoMingBot.getMiraiBot().getNick(),"现在是" + nowtime )
-                    .add(xiaoMingBot.getCode(),(int) (new Date().getTime()/1000),xiaoMingBot.getMiraiBot().getNick(),"您获得了" + lccount + "点Coin。")
-                    .add(xiaoMingBot.getCode(),(int) (new Date().getTime()/1000),xiaoMingBot.getMiraiBot().getNick(),"您当前拥有" + myC + "点Coin。");
-            user.getContact().sendMessage(forwardMessageBuilder.build());
+            user.sendMessage("现在是" + nowtime+
+                    "\n您获得了" + lccount + "点Coin。\n"+"您当前拥有" + myC + "点Coin。");
         }
 
 
