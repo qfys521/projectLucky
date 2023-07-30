@@ -1,6 +1,6 @@
 {
 "author" : "qfys521",
-"main" : "cn.qfys521.xiaoming.plugin.projectLucky.LikeLucky",
-"version" : "1.1-SNAPSHOT",
+"main" : "cn.qfys521.xiaoming.plugin.LikeLucky",
+"version" : "1.2-SNAPSHOT",
 "name" : "ProjectLucky"
 }

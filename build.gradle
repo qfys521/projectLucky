@@ -10,6 +10,6 @@ repositories {
 
 
 allprojects {
-    group 'cn.qfys521.xiaoming.plugin.projectLucky'
-    version '1.1.0-SNAPSHOT'
+    group 'cn.qfys521.xiaoming.plugin'
+    version '1.2.0-SNAPSHOT'
 }
