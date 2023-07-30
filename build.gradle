@@ -13,3 +13,4 @@ allprojects {
     group 'cn.qfys521.xiaoming.plugin'
     version '1.2.0-SNAPSHOT'
 }
+
