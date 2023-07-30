@@ -20,10 +20,12 @@ public class LuckInteractor extends SimpleInteractors<LikeLucky> {
     public void lcs(GroupXiaoMingUser user) {
         int lccount = new Random().nextInt(20);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日，hh时mm分");
+        Date dNow = new Date( );
+        SimpleDateFormat ft = new SimpleDateFormat ("yyyyMMdd");
         Date date = new Date();
         String nowtime = sdf.format(date);
 
-        if(nowtime.equals(plugin.datas.getLastDate(user.getCode()))){
+        if(Long.valueOf(ft.format(dNow)).equals(plugin.datas.getLastDate(user.getCode()))){
             user.sendMessage("ヾ(≧へ≦)〃,您今天已经过签到啦");
         }else {
             plugin.datas.addLuckyCount(user.getCode(), lccount);

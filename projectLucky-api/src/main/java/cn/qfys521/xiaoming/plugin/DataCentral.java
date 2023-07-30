@@ -52,7 +52,7 @@ public interface DataCentral {
      * @param qq 被操作者的QQ号码。
      * @return 最后一次签到日期,yyyy-MM-dd
      */
-    String getLastDate(long qq);
+    Long getLastDate(long qq);
 
     /**
      * 修改最后签到日期
