@@ -46,5 +46,18 @@ public interface DataCentral {
      */
     boolean getCOFEnable(long qq);
 
+    /**
+     * 获取最后一次签到日期
+     *
+     * @param qq 被操作者的QQ号码。
+     * @return 最后一次签到日期,yyyy-MM-dd
+     */
+    String getLastDate(long qq);
+
+    /**
+     * 修改最后签到日期
+     * @param qq 被操作者的QQ号码。
+     */
+    void setLastDate(long qq);
 
 }

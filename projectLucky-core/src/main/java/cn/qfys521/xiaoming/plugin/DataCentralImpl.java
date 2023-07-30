@@ -2,6 +2,8 @@ package cn.qfys521.xiaoming.plugin;
 
 import cn.chuanwise.toolkit.preservable.AbstractPreservable;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -13,6 +15,7 @@ public class DataCentralImpl extends AbstractPreservable implements DataCentral{
     HashMap<Long, Long> luckyCount = new HashMap<>();
     //命运の硬币，LuckyCoin
     HashMap<Long,Boolean> coinOfFateCount = new HashMap<>();
+    HashMap<Long,String> lastDate = new HashMap<>();
 
     /**
      * 设置指定用户的Coin数量。
@@ -63,5 +66,21 @@ public class DataCentralImpl extends AbstractPreservable implements DataCentral{
      */
     public boolean getCOFEnable(long qq){
         return this.coinOfFateCount.getOrDefault(qq,true);
+    }
+
+    /**
+     * 获取最后一次签到日期
+     *
+     * @param qq 被操作者的QQ号码。
+     * @return 最后一次签到日期, yyyy-MM-dd
+     */
+    public String getLastDate(long qq) {
+        return this.lastDate.getOrDefault(qq,null);
+    }
+
+    public void setLastDate(long qq){
+        Date dNow = new Date( );
+        SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
+        this.lastDate.put(qq,ft.format(dNow));
     }
 }
