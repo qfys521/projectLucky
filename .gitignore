@@ -1,5 +1,11 @@
-/libs/xiaoming-host-terminal-snapshot-4.9.1.jar
+/libs
 /build
 /.gradle
 /.idea
 /.git
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
