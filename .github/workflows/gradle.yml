@@ -32,21 +32,13 @@ jobs:
       
       
     - name: Build with Gradle
-      run: ./gradlew shadowJar
+      run: ./gradlew build
       
     - uses: actions/upload-artifact@v3
       with:
-        name: api
-        path: ./projectLucky-api/build/libs/*.jar
+        name: jar
+        path: .build/libs/*.jar
     
-    - uses: actions/upload-artifact@v3
-      with:
-        name: core
-        path: ./projectLucky-core/build/libs/*.jar
-    
-    - uses: actions/upload-artifact@v3
-      with:
-        name: all
-        path: ./projectLucky-core-all/build/libs/*.jar
+
     
     
